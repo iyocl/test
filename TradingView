@@ -1,0 +1,15 @@
+#!name=TradingView
+#!desc=TradingView
+
+# 🔗 模块链接(此字段配合 https://github.com/Script-Hub-Org/Script-Hub/wiki/%E7%9B%B8%E5%85%B3%E7%94%9F%E6%80%81:-Surge-%E6%A8%A1%E5%9D%97%E5%B7%A5%E5%85%B7 使用)
+#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/main/TradingView.js/_end_/TradingView.plugin?type=qx-rewrite&target=loon-plugin&del=true
+
+[Script]
+#未开通试用
+http-response https://cn.tradingview.com/api/v1/user/profile/me/ script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/TradingView.js, requires-body=true, timeout=60, tag=TradingView
+
+#开通试用或者会员未到期
+http-response https://cn.tradingview.com/order/apple/receipt/ script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/TradingView.js, requires-body=true, timeout=60, tag=TradingView
+
+[MITM]
+hostname = cn.tradingview.com
