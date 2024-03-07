@@ -1,0 +1,16 @@
+#!name=kuaiy
+#!desc=kuaiy
+
+# 🔗 模块链接(此字段配合 https://github.com/Script-Hub-Org/Script-Hub/wiki/%E7%9B%B8%E5%85%B3%E7%94%9F%E6%80%81:-Surge-%E6%A8%A1%E5%9D%97%E5%B7%A5%E5%85%B7 使用)
+#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/kuaiy.js/_end_/kuaiy.plugin?type=qx-rewrite&target=loon-plugin&del=true
+
+[Rewrite]
+^https://api\.kmovie\.gifshow\.com/rest/n/kmovie/app/merchant/ad/bidding - reject
+^https://mi\.gdt\.qq\.com/gdt_mview\.fcg - reject
+
+[Script]
+# > 快影 解锁Vip、付费、Ai玩法
+http-response ^https?:\/\/(id\.kwaiying|api\.kmovie\.gifshow)\.com.*$ script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/kuaiy.js, requires-body=true, timeout=60, tag=kuaiy
+
+[MITM]
+hostname = api.kmovie.gifshow.com, id.kwaiying.com, mi.gdt.qq.com
