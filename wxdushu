@@ -1,0 +1,15 @@
+#!name=wxds
+#!desc=wxds
+
+# 🔗 模块链接(此字段配合 https://github.com/Script-Hub-Org/Script-Hub/wiki/%E7%9B%B8%E5%85%B3%E7%94%9F%E6%80%81:-Surge-%E6%A8%A1%E5%9D%97%E5%B7%A5%E5%85%B7 使用)
+#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/wxds.js/_end_/wxds.plugin?type=qx-rewrite&target=loon-plugin&del=true
+
+[Rewrite]
+^https://i\.weread\.qq\.com/updateConfig - reject
+
+[Script]
+# > 微信读书vip(需重新用微信登陆，无法刷新->关闭脚本进入) 
+http-response ^https?:\/\/i.weread.qq.com\/(login|pay\/balance|user\/profile).*$ script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/wxds.js, requires-body=true, timeout=60, tag=wxds
+
+[MITM]
+hostname = i.weread.qq.com
